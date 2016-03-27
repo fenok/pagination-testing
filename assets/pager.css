@@ -16,6 +16,11 @@ body {
     border: 1px darkorange solid;
     min-width: 30px;
     margin-left: -1px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #pager > a:first-of-type {
@@ -30,8 +35,4 @@ body {
 
 #pager > span {
     cursor: not-allowed;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }

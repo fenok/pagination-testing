@@ -36,3 +36,11 @@ body {
 #pager > span {
     cursor: not-allowed;
 }
+
+#pager > a:hover{
+    color:lightgrey;
+}
+
+.selected{
+    color: floralwhite!important;
+}

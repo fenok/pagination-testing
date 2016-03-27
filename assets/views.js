@@ -26,18 +26,23 @@ function formPager( current, showing, total )
 	}
 }
 
+function formPagerFromHash()
+{
+	var hashValue = parseInt( window.location.hash.substr( 1 ), 10 );
+	if ( !hashValue || 1 >= hashValue || hashValue >= total )
+	{
+		window.location.hash = '#1';
+		hashValue            = 1;
+	}
+	formPager( hashValue, showing, total );
+}
+
 window.addEventListener( 'hashchange', function()
 {
-	formPager( parseInt( window.location.hash.substr( 1 ) ), showing, total );
+	formPagerFromHash();
 } );
 
 window.addEventListener( 'load', function()
 {
-	var hashValue = window.location.hash.substr( 1 );
-	if ( !Number.isInteger( hashValue ) || 1 >= hashValue || hashValue >= total )
-	{
-		window.location.hash = '#1';
-		hashValue            = '1';
-	}
-	formPager( parseInt( hashValue ), showing, total );
+	formPagerFromHash();
 } );

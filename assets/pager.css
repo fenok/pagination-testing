@@ -23,12 +23,12 @@ body {
     user-select: none;
 }
 
-#pager > a:first-of-type {
+#pager > a:first-child {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
-#pager > a:last-of-type {
+#pager > a:last-child {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }

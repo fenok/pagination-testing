@@ -1,14 +1,37 @@
-#pager{
+body {
+    background-color: black;
+}
+
+#pager {
     text-align: center;
 }
 
 #pager > * {
     display: inline-block;
     text-align: center;
-    text-decoration:none;
-    color: black;
-    background-color: darkgrey;
+    text-decoration: none;
+    color: #9d9d9d;
+    background-color: #222;
     margin: 0;
-    border: 1px grey solid;
+    border: 1px darkorange solid;
     min-width: 30px;
+    margin-left: -1px;
+}
+
+#pager > a:first-of-type {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#pager > a:last-of-type {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#pager > span {
+    cursor: not-allowed;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

@@ -27,4 +27,5 @@ window.addEventListener('hashchange', function()
 window.addEventListener('load', function()
 {
 	window.location.hash = '#1';
+	formPager(window.location.hash.substr(1),7,20);
 });

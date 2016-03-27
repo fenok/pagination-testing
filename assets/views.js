@@ -28,7 +28,7 @@ function formPager( current, showing, total )
 
 window.addEventListener( 'hashchange', function()
 {
-	formPager( parseInt(window.location.hash.substr( 1 )), showing, total );
+	formPager( parseInt( window.location.hash.substr( 1 ) ), showing, total );
 } );
 
 window.addEventListener( 'load', function()
@@ -39,5 +39,5 @@ window.addEventListener( 'load', function()
 		window.location.hash = '#1';
 		hashValue            = '1';
 	}
-	formPager( parseInt(hashValue), showing, total );
+	formPager( parseInt( hashValue ), showing, total );
 } );

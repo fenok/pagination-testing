@@ -37,10 +37,10 @@ body {
     cursor: not-allowed;
 }
 
-#pager > a:hover{
-    color:lightgrey;
+#pager > a:hover {
+    color: lightgrey;
 }
 
-.selected{
-    color: floralwhite!important;
+.selected {
+    color: floralwhite !important;
 }

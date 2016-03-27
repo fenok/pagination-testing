@@ -1,0 +1,14 @@
+#pager{
+    text-align: center;
+}
+
+#pager > * {
+    display: inline-block;
+    text-align: center;
+    text-decoration:none;
+    color: black;
+    background-color: darkgrey;
+    margin: 0;
+    border: 1px grey solid;
+    min-width: 30px;
+}

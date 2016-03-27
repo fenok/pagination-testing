@@ -29,7 +29,7 @@ function formPager( current, showing, total )
 function formPagerFromHash()
 {
 	var hashValue = parseInt( window.location.hash.substr( 1 ), 10 );
-	if ( !hashValue || 1 >= hashValue || hashValue >= total )
+	if ( !hashValue || 1 > hashValue || hashValue > total )
 	{
 		window.location.hash = '#1';
 		hashValue            = 1;

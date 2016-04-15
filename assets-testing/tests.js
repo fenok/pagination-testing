@@ -13,8 +13,22 @@ for (var ind = 0; ind < scriptsArray.length; ++ind)
 	var scriptText = scriptsArray[ ind ].import.body.innerText;
 	var scriptInfoDiv = document.createElement('div');
 	var tableHeader = document.createElement('div');
+	var tableContent = document.createElement('div');
 	tableHeader.innerHTML = scriptsArray[ind ].href;
 	scriptInfoDiv.appendChild(tableHeader);
+	scriptInfoDiv.appendChild(tableContent);
+
+	tableHeader.addEventListener('click', function()
+	{
+		if (this.className)
+		{
+			this.className="";
+		}
+		else
+		{
+			this.className="active";
+		}
+	});
 
 	JSHINT(scriptText, {}, {});
 
@@ -27,7 +41,7 @@ for (var ind = 0; ind < scriptsArray.length; ++ind)
 			{
 				tableRow = document.createElement('div');
 				tableRow.innerHTML = err.line + ":" + err.character + " " + err.reason + "(" + err.evidence + ")";
-				scriptInfoDiv.appendChild(tableRow);
+				tableContent.appendChild(tableRow);
 			}
 		}
 	}
@@ -35,7 +49,7 @@ for (var ind = 0; ind < scriptsArray.length; ++ind)
 	{
 		tableRow = document.createElement('div');
 		tableRow.innerHTML = "No errors";
-		scriptInfoDiv.appendChild(tableRow);
+		tableContent.appendChild(tableRow);
 	}
 	jshintOutput.appendChild(scriptInfoDiv);
 }

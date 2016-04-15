@@ -21,7 +21,7 @@
     border-bottom-right-radius: 5px;
 }
 
-#jshint-output > div > div{
+#jshint-output > div > div:first-child, #jshint-output > div > div > div{
     padding: 0 5px;
 }
 
@@ -29,6 +29,14 @@
     font-weight: bold;
 }
 
-#jshint-output > div > div:nth-child(even){
+#jshint-output > div > div:first-child + div{
+    display: none;
+}
+
+#jshint-output > div > div:first-child.active + div{
+    display: block;
+}
+
+#jshint-output > div > div > div:nth-child(odd){
     background-color: #FFD891;
 }

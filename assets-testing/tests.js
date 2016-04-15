@@ -1,8 +1,3 @@
-if (window.location.search === '')
-{
-	window.location.href = window.location.href + '?coverage=true';
-}
-
 var qunitFixture = document.getElementById('qunit-fixture');
 
 QUnit.test( 'getNumbersArray()', function( assert )

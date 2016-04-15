@@ -40,7 +40,7 @@ for (var ind = 0; ind < scriptsArray.length; ++ind)
 			if (err !== null)
 			{
 				tableRow = document.createElement('div');
-				tableRow.innerHTML = err.line + ":" + err.character + " " + err.reason + "(" + err.evidence + ")";
+				tableRow.innerHTML = err.line + ":" + err.character + " " + err.reason/* + "(" + err.evidence + ")"*/;
 				tableContent.appendChild(tableRow);
 			}
 		}

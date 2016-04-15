@@ -1,9 +1,9 @@
-window.location.hash = '';
-
 if (window.location.search === '')
 {
 	window.location.href = window.location.href + '?coverage=true';
 }
+
+var qunitFixture = document.getElementById('qunit-fixture');
 
 QUnit.test( 'getNumbersArray()', function( assert )
 {
@@ -27,7 +27,10 @@ QUnit.test( 'getNumbersArray()', function( assert )
 
 QUnit.test( 'formPager()', function( assert )
 {
-	var pagerDiv = document.getElementById("pager");
+	var pagerDiv = document.createElement('div');
+	pagerDiv.id = "pager";
+	qunitFixture.innerHTML = "";
+	qunitFixture.appendChild(pagerDiv);
 	formPager(1,7,20);
 	assert.equal(pagerDiv.childElementCount, 10, "Simple count test -- Lower bound");
 	formPager(16,7,20);
@@ -36,4 +39,5 @@ QUnit.test( 'formPager()', function( assert )
 	assert.equal(pagerDiv.childElementCount, 11, "Simple count test -- Middle");
 	formPager(21,7,20);
 	assert.equal(pagerDiv.childElementCount, 0, "Simple count test -- Error");
+	qunitFixture.innerHTML = "";
 });

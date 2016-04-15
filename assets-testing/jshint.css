@@ -1,0 +1,34 @@
+#jshint-output{
+    border-radius: 5px;
+}
+
+#jshint-output > div:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: darkorange;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#jshint-output > div:not(first-child){
+    border: solid 2px darkorange;
+    background-color: #FFC354;
+    margin-top: -2px;
+}
+
+#jshint-output > div:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#jshint-output > div > div{
+    padding: 0 5px;
+}
+
+#jshint-output > div > div:first-child{
+    font-weight: bold;
+}
+
+#jshint-output > div > div:nth-child(even){
+    background-color: #FFD891;
+}

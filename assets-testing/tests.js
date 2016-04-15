@@ -1,4 +1,44 @@
 var qunitFixture = document.getElementById('qunit-fixture');
+var scriptsArray = document.getElementsByClassName("scripts");
+var jshintOutput = document.getElementById("jshint-output" );
+
+var jshintHeader = document.createElement('div');
+jshintHeader.innerText="JSHint results";
+jshintOutput.appendChild(jshintHeader);
+
+for (var ind = 0; ind < scriptsArray.length; ++ind)
+{
+	var err;
+	var tableRow;
+	var scriptText = scriptsArray[ ind ].import.body.innerText;
+	var scriptInfoDiv = document.createElement('div');
+	var tableHeader = document.createElement('div');
+	tableHeader.innerHTML = scriptsArray[ind ].href;
+	scriptInfoDiv.appendChild(tableHeader);
+
+	JSHINT(scriptText, {}, {});
+
+	if (JSHINT.errors.length)
+	{
+		for ( var errind = 0; errind < JSHINT.errors.length; ++errind )
+		{
+			err = JSHINT.errors[ errind ];
+			if (err !== null)
+			{
+				tableRow = document.createElement('div');
+				tableRow.innerHTML = err.line + ":" + err.character + " " + err.reason + "(" + err.evidence + ")";
+				scriptInfoDiv.appendChild(tableRow);
+			}
+		}
+	}
+	else
+	{
+		tableRow = document.createElement('div');
+		tableRow.innerHTML = "No errors";
+		scriptInfoDiv.appendChild(tableRow);
+	}
+	jshintOutput.appendChild(scriptInfoDiv);
+}
 
 QUnit.test( 'getNumbersArray()', function( assert )
 {

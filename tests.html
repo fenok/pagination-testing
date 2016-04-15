@@ -8,9 +8,14 @@
 </head>
 <body>
 <div id="qunit"></div>
-<div id="qunit-fixture"></div>
+<div id="qunit-fixture">
+    <div id="pager">
+    </div>
+</div>
 <script src="https://code.jquery.com/qunit/qunit-1.23.0.js"></script>
-<script src="assets/logic.js"></script>
+<script src="blanket.min.js"></script>
+<script src="assets/logic.js" data-cover></script>
+<script src="assets/views.js" data-cover></script>
 <script src="assets-testing/tests.js"></script>
 </body>
 </html>

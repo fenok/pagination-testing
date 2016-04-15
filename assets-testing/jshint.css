@@ -27,6 +27,7 @@
 
 #jshint-output > div > div:first-child{
     font-weight: bold;
+    cursor: pointer;
 }
 
 #jshint-output > div > div:first-child + div{

@@ -1,57 +1,57 @@
-var qunitFixture = document.getElementById('qunit-fixture');
-var scriptsArray = document.getElementsByClassName("scripts");
-var jshintOutput = document.getElementById("jshint-output" );
+var qunitFixture = document.getElementById( 'qunit-fixture' );
+var scriptsArray = document.getElementsByClassName( "scripts" );
+var jshintOutput = document.getElementById( "jshint-output" );
 
-var jshintHeader = document.createElement('div');
-jshintHeader.innerText="JSHint results";
-jshintOutput.appendChild(jshintHeader);
+var jshintHeader       = document.createElement( 'div' );
+jshintHeader.innerText = "JSHint results";
+jshintOutput.appendChild( jshintHeader );
 
-for (var ind = 0; ind < scriptsArray.length; ++ind)
+for ( var ind = 0; ind < scriptsArray.length; ++ind )
 {
 	var err;
 	var tableRow;
-	var scriptText = scriptsArray[ ind ].import.body.innerText;
-	var scriptInfoDiv = document.createElement('div');
-	var tableHeader = document.createElement('div');
-	var tableContent = document.createElement('div');
-	tableHeader.innerHTML = scriptsArray[ind ].href;
-	scriptInfoDiv.appendChild(tableHeader);
-	scriptInfoDiv.appendChild(tableContent);
+	var scriptText        = scriptsArray[ ind ].import.body.innerText;
+	var scriptInfoDiv     = document.createElement( 'div' );
+	var tableHeader       = document.createElement( 'div' );
+	var tableContent      = document.createElement( 'div' );
+	tableHeader.innerHTML = scriptsArray[ ind ].href;
+	scriptInfoDiv.appendChild( tableHeader );
+	scriptInfoDiv.appendChild( tableContent );
 
-	tableHeader.addEventListener('click', function()
+	tableHeader.addEventListener( 'click', function()
 	{
-		if (this.className)
+		if ( this.className )
 		{
-			this.className="";
+			this.className = "";
 		}
 		else
 		{
-			this.className="active";
+			this.className = "active";
 		}
-	});
+	} );
 
-	JSHINT(scriptText, {}, {});
+	JSHINT( scriptText, {}, {} );
 
-	if (JSHINT.errors.length)
+	if ( JSHINT.errors.length )
 	{
 		for ( var errind = 0; errind < JSHINT.errors.length; ++errind )
 		{
 			err = JSHINT.errors[ errind ];
-			if (err !== null)
+			if ( err !== null )
 			{
-				tableRow = document.createElement('div');
+				tableRow           = document.createElement( 'div' );
 				tableRow.innerHTML = err.line + ":" + err.character + " " + err.reason/* + "(" + err.evidence + ")"*/;
-				tableContent.appendChild(tableRow);
+				tableContent.appendChild( tableRow );
 			}
 		}
 	}
 	else
 	{
-		tableRow = document.createElement('div');
+		tableRow           = document.createElement( 'div' );
 		tableRow.innerHTML = "No errors";
-		tableContent.appendChild(tableRow);
+		tableContent.appendChild( tableRow );
 	}
-	jshintOutput.appendChild(scriptInfoDiv);
+	jshintOutput.appendChild( scriptInfoDiv );
 }
 
 QUnit.test( 'getNumbersArray()', function( assert )
@@ -76,17 +76,17 @@ QUnit.test( 'getNumbersArray()', function( assert )
 
 QUnit.test( 'formPager()', function( assert )
 {
-	var pagerDiv = document.createElement('div');
-	pagerDiv.id = "pager";
+	var pagerDiv           = document.createElement( 'div' );
+	pagerDiv.id            = "pager";
 	qunitFixture.innerHTML = "";
-	qunitFixture.appendChild(pagerDiv);
-	formPager(1,7,20);
-	assert.equal(pagerDiv.childElementCount, 10, "Simple count test -- Lower bound");
-	formPager(16,7,20);
-	assert.equal(pagerDiv.childElementCount, 10, "Simple count test -- Higher bound");
-	formPager(11,7,20);
-	assert.equal(pagerDiv.childElementCount, 11, "Simple count test -- Middle");
-	formPager(21,7,20);
-	assert.equal(pagerDiv.childElementCount, 0, "Simple count test -- Error");
+	qunitFixture.appendChild( pagerDiv );
+	formPager( 1, 7, 20 );
+	assert.equal( pagerDiv.childElementCount, 10, "Simple count test -- Lower bound" );
+	formPager( 16, 7, 20 );
+	assert.equal( pagerDiv.childElementCount, 10, "Simple count test -- Higher bound" );
+	formPager( 11, 7, 20 );
+	assert.equal( pagerDiv.childElementCount, 11, "Simple count test -- Middle" );
+	formPager( 21, 7, 20 );
+	assert.equal( pagerDiv.childElementCount, 0, "Simple count test -- Error" );
 	qunitFixture.innerHTML = "";
-});
+} );

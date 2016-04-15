@@ -1,8 +1,8 @@
-#jshint-output{
+#jshint-output {
     border-radius: 5px;
 }
 
-#jshint-output > div:first-child{
+#jshint-output > div:first-child {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: darkorange;
@@ -10,34 +10,34 @@
     padding: 0 5px;
 }
 
-#jshint-output > div:not(first-child){
+#jshint-output > div:not(first-child) {
     border: solid 2px darkorange;
     background-color: #FFC354;
     margin-top: -2px;
 }
 
-#jshint-output > div:last-child{
+#jshint-output > div:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-#jshint-output > div > div:first-child, #jshint-output > div > div > div{
+#jshint-output > div > div:first-child, #jshint-output > div > div > div {
     padding: 0 5px;
 }
 
-#jshint-output > div > div:first-child{
+#jshint-output > div > div:first-child {
     font-weight: bold;
     cursor: pointer;
 }
 
-#jshint-output > div > div:first-child + div{
+#jshint-output > div > div:first-child + div {
     display: none;
 }
 
-#jshint-output > div > div:first-child.active + div{
+#jshint-output > div > div:first-child.active + div {
     display: block;
 }
 
-#jshint-output > div > div > div:nth-child(odd){
+#jshint-output > div > div > div:nth-child(odd) {
     background-color: #FFD891;
 }

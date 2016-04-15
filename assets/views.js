@@ -4,7 +4,7 @@ function formPager( current, showing, total )
 	pagerDiv.innerHTML = '';
 	var numbers        = getNumbersArray( current, showing, total );
 	var ref;
-	if (numbers[0] !== 0)
+	if ( numbers[ 0 ] !== 0 )
 	{
 		for ( var index = 0; index < numbers.length; ++index )
 		{

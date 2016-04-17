@@ -56,7 +56,7 @@ for ( var ind = 0; ind < scriptsArray.length; ++ind )
 
 QUnit.test( 'getNumbersArray()', function( assert )
 {
-	assert.deepEqual( [], getNumbersArray( 0, 0, 0 ), "Special case of zeros" );
+	assert.deepEqual( [], getNumbersArray( 0, 0, 0 ), "Special case of zeros -- русские буковки" );
 	assert.deepEqual( [ 0 ], getNumbersArray( 1, 0, 0 ), "Incorrect current" );
 	assert.deepEqual( [ 0 ], getNumbersArray( 0, 1, 0 ), "Incorrect showing" );
 	assert.deepEqual( [ 0 ], getNumbersArray( 0, 0, 1 ), "Incorrect total" );
